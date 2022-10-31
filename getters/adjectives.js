@@ -3,7 +3,7 @@ require("dotenv").config();
 
 async function getAdjectives(words, count) {
   //Generate random number for paging
-  const rand = Math.floor(Math.random() * 5000) + 1;
+  const rand = Math.floor(Math.random() * 3000) + 1;
 
   const url =
     "https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=adjective&page=" +

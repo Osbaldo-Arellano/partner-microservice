@@ -3,7 +3,7 @@ require("dotenv").config();
 
 async function getAdverb(words, count) {
   //Generate random number for paging
-  const rand = Math.floor(Math.random() * 50) + 1;
+  const rand = Math.floor(Math.random() * 1000) + 1;
 
   const url =
     "https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=adverb&page=" +

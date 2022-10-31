@@ -3,7 +3,7 @@ require("dotenv").config();
 
 async function getVerbs(words, count) {
   //Generate random number for paging
-  const rand = Math.floor(Math.random() * 3760 - 1) + 1;
+  const rand = Math.floor(Math.random() * 2000 - 1) + 1;
 
   const url =
     "https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=verb&page=" +
