@@ -41,3 +41,6 @@ Example of a response:
 ```
 
 Each field will contain an array of words that were requested. If no words were requested for a particular part of speech, then the array will be empty.
+
+Sequence Diagram![image](https://user-images.githubusercontent.com/93015338/199125619-79c87902-4390-4d01-9869-abecde7175c1.png)
+
