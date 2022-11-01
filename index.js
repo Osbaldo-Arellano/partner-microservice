@@ -37,6 +37,10 @@ app.get("/words/:words", async (req, res) => {
   res.send(words);
 });
 
+app.get("/words/", async (req, res) => {
+  res.send("sfg");
+});
+
 app.listen(port, () => {
   console.log(`Requesting app listening on port ${port}`);
 });
