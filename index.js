@@ -10,35 +10,39 @@ const adverb = require("./getters/adverbs");
 require("dotenv").config();
 
 app.get("/words/:words", async (req, res) => {
-  var json = JSON.parse(req.params.words);
-  const verbNum = json.verb;
-  const nounNum = json.noun;
-  const adjNum = json.adjective;
-  const adverbNum = json.adverb;
-  const pluralNounNum = json.pluralNoun;
-  const participleNum = json.participle;
+  try {
+    var json = JSON.parse(req.params.words);
+    const verbNum = json.verb;
+    const nounNum = json.noun;
+    const adjNum = json.adjective;
+    const adverbNum = json.adverb;
+    const pluralNounNum = json.pluralNoun;
+    const participleNum = json.participle;
 
-  let words = {
-    noun: [],
-    pluralNoun: [],
-    adjective: [],
-    verb: [],
-    participle: [],
-    adverb: [],
-  };
+    let words = {
+      noun: [],
+      pluralNoun: [],
+      adjective: [],
+      verb: [],
+      participle: [],
+      adverb: [],
+    };
 
-  await verbs.getVerbs(words, verbNum);
-  await nouns.getNouns(words, nounNum);
-  await adjectives.getAdjectives(words, adjNum);
-  await adverb.getAdverb(words, adverbNum);
-  await pluralNoun.getPluralNouns(words, pluralNounNum);
-  await participle.getParticiple(words, participleNum);
+    await verbs.getVerbs(words, verbNum);
+    await nouns.getNouns(words, nounNum);
+    await adjectives.getAdjectives(words, adjNum);
+    await adverb.getAdverb(words, adverbNum);
+    await pluralNoun.getPluralNouns(words, pluralNounNum);
+    await participle.getParticiple(words, participleNum);
 
-  res.send(words);
+    res.send(words);
+  } catch (err) {
+    res.send("Invalid request");
+  }
 });
 
 app.get("/words/", async (req, res) => {
-  res.send("sfg");
+  res.send("are you looking for words/:words?");
 });
 
 app.all("*", function (req, res) {
