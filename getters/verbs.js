@@ -12,7 +12,7 @@ async function getVerbs(words, count) {
         data.push(r);
       })
       .on("end", () => {
-        for (let i = 1; i < count; i++) {
+        for (let i = 0; i < count; i++) {
           words.verb.push(
             // Push random word
             data[Math.floor(Math.random() * data.length) + 1][0]
