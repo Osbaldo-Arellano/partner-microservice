@@ -41,6 +41,10 @@ app.get("/words/", async (req, res) => {
   res.send("sfg");
 });
 
+app.all("*", function (req, res) {
+  throw new Error("Bad request");
+});
+
 app.listen(port, () => {
   console.log(`Requesting app listening on port ${port}`);
 });
