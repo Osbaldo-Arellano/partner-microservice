@@ -16,7 +16,6 @@ let s3 = new aws.S3({
   APIKEY: process.env.APIKEY,
 });
 
-console.log(s3);
 app.get("/words/:words", async (req, res) => {
   var json = JSON.parse(req.params.words);
   const verbNum = json.verb;
