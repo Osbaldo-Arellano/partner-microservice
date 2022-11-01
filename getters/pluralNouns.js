@@ -6,7 +6,7 @@ async function getPluralNouns(words, count) {
   const data = [];
 
   return new Promise((resolve) => {
-    fs.createReadStream("./data/noun.csv")
+    fs.createReadStream("./data/nouns.csv")
       .pipe(parse({ delimiter: ",", relax_column_count: true }))
       .on("data", (r) => {
         data.push(r);
