@@ -37,7 +37,9 @@ app.get("/words/:words", async (req, res) => {
 
     res.send(words);
   } catch (err) {
-    res.send("Invalid request");
+    res.send(
+      "Invalid request. \n Check if the request is in JSON format. \n Or check if request is sending a valid number."
+    );
   }
 });
 

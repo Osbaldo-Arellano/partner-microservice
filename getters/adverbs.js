@@ -19,7 +19,6 @@ async function getAdverb(words, count) {
             data[Math.floor(Math.random() * data.length - 1) + 1][0]
           );
         }
-        console.log(words);
         resolve(words);
       });
   });
