@@ -15,7 +15,7 @@ async function getVerbs(words, count) {
         for (let i = 0; i < count; i++) {
           words.verb.push(
             // Push random word
-            data[Math.floor(Math.random() * data.length) + 1][0]
+            data[Math.floor(Math.random() * data.length - 1) + 1][0]
           );
         }
         resolve(words);
